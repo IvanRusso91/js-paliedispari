@@ -6,30 +6,31 @@ Bonus: L’inserimento avviene tramite un campo input
 */
 
 //-------------------------------------------------------
-
-// let utente = prompt('inserisci una parola');
-let paliNo = 'amala';
-let paliSi = 'otto';
+const stampa= document.getElementById('box');
+let utente = prompt('inserisci una parola');
+let paliSi = palindromo(utente);
 
 function palindromo(parola){
 
-  let serbatoio = [];
-  let output= false;
+  let output= true;
 
   for(let i = 0; i < parola.length; i++){
-    if(parola[i] === parola[parola.length - i - 1]){
-      output = true;
-      serbatoio.push(output);
-    }else{
-      output= false;
-      serbatoio.push(output);
+    if(parola[i] != parola[parola.length - i - 1]){
+      output = false;
     }
     
   }
-
   return output;
 }
 
+if(paliSi){
+  output = true
+  stampa.innerHTML = `il numero che hai scelto è un palindromo`;
+}else{
+  stampa.innerHTML = `il numero che hai scelto non è un palindromo`;
+}
 
-palindromo(paliSi);
-palindromo(paliNo);
+
+
+
+
